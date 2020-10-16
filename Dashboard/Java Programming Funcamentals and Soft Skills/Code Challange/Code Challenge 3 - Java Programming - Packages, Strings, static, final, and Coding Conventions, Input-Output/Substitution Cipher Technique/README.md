@@ -12,24 +12,29 @@ Develop a java application that accepts the secret message to decrypt and print 
     Pukph
 
 > Sample Output 1
+
     Decrypted text:
     India
 
 ---
 
 > Sample Input 2
+
     Enter the encrypted text:
     Z23hcl @d$3#haly
 
 > Sample Output 2
+
     Decrypted text:
     Save water
 
 ---
 
 > Sample Input 3
+
     Enter the encrypted text:
     @67$89##^^
 
 > Sample Output 3
+
     No hidden message
