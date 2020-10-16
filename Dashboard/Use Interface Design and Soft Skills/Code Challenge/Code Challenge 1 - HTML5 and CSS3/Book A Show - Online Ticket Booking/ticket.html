@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK A SHOW - TICKET BOOKING</title>
+    <style>
+        body {
+            background-color: #00CED1;
+            color: #0C1584;
+        }
+
+        h1 {
+            color: #0000FF;
+            font-family: monospace;
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BOOK A SHOW - TICKET BOOKING</h1>
+    <form onsubmit="alert('Booking Successful'); return false;">
+        <table>
+            <tr>
+                <td>
+                    <label for="name">Name</label>
+                </td>
+                <td>
+                    <input type="text" id="name" name="name" pattern="^[a-zA-Z ]+$" placeholder="Enter the Name"
+                        required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="moviename">Movie Name</label>
+                </td>
+                <td>
+                    <input list="mvoies" name="moviename" id="moviename" placeholder="Movie Name" required>
+                    <datalist id="movies" name="movies">
+                        <option value="Irada">Irada</option>
+                        <option value="Rangoon">Rangoon</option>
+                        <option value="Fist Fight">Fist Fight</option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="circle">Circle</label>
+                </td>
+                <td>
+                    <input list="circles" name="circle" id="circle" required>
+                    <datalist id="circles" name="circles">
+                        <option value="Silver">Silver</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Platinum">Platinum</option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="phone">Phone no</label>
+                </td>
+                <td>
+                    <input type="text" name="phone" id="phone" pattern="^\d{10}$" placeholder="Enter Mobile Number"
+                        required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="showdate">Show date and time</label>
+                </td>
+                <td>
+                    <input type="datetime-local" name="showdate" id="showdate" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="tickets">No of Adults</label>
+                </td>
+                <td>
+                    <input type="number" id="tickets" name="tickets" min="1" max="10" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="children">No of children</label>
+                </td>
+                <td>
+                    <input type="number" id="chidren" name="children" min="1" max="5" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="submit" id="submit" value="Book My Show">
+                </td>
+                <td>
+                    <input type="reset" name="reset" id="reset" value="Reset">
+                </td>
+        </table>
+    </form>
+</body>
+</html>
