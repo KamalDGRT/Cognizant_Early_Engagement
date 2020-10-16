@@ -1,297 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Address Book</title>
+    <title>Consignment Booking</title>
     <style>
         body {
-            background-color: #F8F8FA;
+            background-color: #CEF6CE;
+            font-size: 15px;
         }
 
         h1 {
-            color: #006666;
+            color: #08088A;
             font-family: verdana;
             text-align: center;
         }
+
+        table {
+            font-size: 15px;
+        }
+
+        #costtable {
+            text-align: center;
+            float: right;
+            border-style: solid;
+        }
     </style>
 </head>
-
 <body>
-    <h1>ADDRESS BOOK</h1>
-    <form action="#">
-        <table>
-            <tr>
-                <td>
-                    <label for="name">Name</label>
-                </td>
-                <td>
-                    <input type="text" id="name" name="name" pattern="^[a-zA-Z ]+$" placeholder="Enter the name" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="type">Type</label>
-                </td>
-                <td>
-                    <input type="radio" id="type1" name="type" value="Temporary" required>
-                    <label for="temporary">Temporary</label>
-                    <input type="radio" id="type2" name="type" value="Permanent" required>
-                    <label for="permanent">Permanent</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="address">Address</label>
-                </td>
-                <td>
-                    <textarea name="address" id="address" cols="21" rows="3" placeholder="Fill Address here"
-                        required></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="email">Email</label>
-                </td>
-                <td>
-                    <input type="email" id="email" name="email" placeholder="abc@gmail.com" pattern="^.+@gmail\.com$"
-                        required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="mobile">Mobile Number</label>
-                </td>
-                <td>
-                    <input type="text" name="mobile" id="mobile" min="7000000000" max="9999999999" pattern="^[789]\d{9}$"
-                        placeholder="Enter the Mobile Number" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="location">Location</label>
-                </td>
-                <td>
-                    <select name="location" id="location" required>
-                        <option id="Coimbatore" value="Coimbatore">Coimbatore</option>
-                        <option id="Chennai" value="Chennai">Chennai</option>
-                        <option id="Bangalore" value="Bangalore">Bangalore</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button id="add" name="add" onclick="addAddress()">Add</button>
-                </td>
-                <td>
-                    <button type="reset" id="clear" name="clear" onclick="reset()">Reset</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="result"></div>
-                </td>
-            </tr>
-        </table>
-    </form>
-    <script type="text/javascript">
-        const _name = document.getElementById("name")
-        const _type1 = document.getElementById("type1");
-        const _type2 = document.getElementById("type2");
-        const _address = document.getElementById("address");
-        const _email = document.getElementById("email");
-        const _mobile = document.getElementById("mobile");
-        const _location = document.getElementById("location");
-        const _result = document.getElementById("result");
+<form onsubmit="return costcalculation()">
+       <table>
+        <tr>
+            <td colspan="2">
+                <h1>Air Cargo Service</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="accnumber">Customer Logistic Account Number</label>
+            </td>
+            <td>
+                <input type="text" name="accnumber" id="accnumber" placeholder="Enter the Unique ID"
+                       pattern="^[a-zA-Z]{4}_\d{3}$" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="mobile">Mobile Number</label>
+            </td>
+            <td>
+                <input type="text" name="mobile" id="mobile" min="7000000000" max="9999999999" pattern="^[7-9]{1}\d{9}$"
+                       required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="emailid">Email-ID</label>
+            </td>
+            <td>
+                <input type="text" name="emailid" id="emailid" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="item">Item to be Shipped</label>
+            </td>
+            <td>
+                <input type="text" name="item" id="item" placeholder="Item Name" pattern="^[a-zA-Z ]+$" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="itemtype">Item Category</label>
+            </td>
+            <td>
+                <select name="itemtype" id="itemtype" required>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Attires">Attires</option>
+                    <option value="Toys">Toys</option>
+                    <option value="Non Poisonous Food">Non Poisonous Food</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="address">Shipment Address</label>
+            </td>
+            <td>
+                <textarea name="address" id="address" cols="13" rows="5" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="location">Location</label>
+            </td>
+            <td>
+                <select name="location" id="category" required>
+                    <option value="London - 1800">London - 1800</option>
+                    <option value="Singapore - 1400">Singapore - 1400</option>
+                    <option value="New York - 3100">New York - 3100</option>
+                    <option value="Mexico City - 3300">Mexico City - 3300</option>
+                    <option value="Tokyo - 2800">Tokyo - 2800</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="kilogramval">Weight in kilograms</label>
+            </td>
+            <td>
+                <input type="number" name="weight" id="kilogramval" min="5" max="36" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="servicetype">Service Type</label>
+            </td>
+            <td>
+                <input type="radio" name="servicetype" id="type1" value="Normal" required>
+                <label for="type1">Normal</label>
+                <input type="radio" name="servicetype" id="type2" value="Express" required>
+                <label for="type2">Express</label>
+                <input type="radio" name="servicetype" id="type3" value="Platinum" required>
+                <label for="type3">Platinum</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="submit" id="submit" value="Book My Consignment">
+            </td>
+            <td>
+                <input type="reset" name="clear" id="clear" value="Clear">
+            </td>
+        </tr>
+    </table>
+</form>
+<div id="result"></div>
+<table id="costtable" border="1">
+    <caption>Shipment Cost Chart</caption>
+    <thead>
+    <tr>
+        <th>ServiceType</th>
+        <th>Weight (in kg)</th>
+        <th>Amount (per Kg)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td rowspan="3">Normal</td>
+        <td>5 to below 15</td>
+        <td>125</td>
+    </tr>
+    <tr>
+        <td>15 to 25</td>
+        <td>175</td>
+    </tr>
+    <tr>
+        <td>Above 25 to 36</td>
+        <td>200</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Express</td>
+        <td>5 to below 15</td>
+        <td>175</td>
+    </tr>
+    <tr>
+        <td>15 to 25</td>
+        <td>225</td>
+    </tr>
+    <tr>
+        <td>Above 25 to 36</td>
+        <td>250</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Platinum</td>
+        <td>5 to below 15</td>
+        <td>225</td>
+    </tr>
+    <tr>
+        <td>15 to 25</td>
+        <td>375</td>
+    </tr>
+    <tr>
+        <td>Above 25 to 36</td>
+        <td>400</td>
+    </tr>
+    </tbody>
+</table>
+<script type="text/javascript">
+    function costcalculation() {
+        const destination = document.getElementById("category").value;
+        const weight = document.getElementById("kilogramval").value;
+        const normal = document.getElementById("type1").checked;
+        const express = document.getElementById("type2").checked;
+        const platinum = document.getElementById("type3").checked;
+        const result = document.getElementById("result");
 
-        const namePattern = /^[a-zA-Z ]+$/;
-        const emailPattern = /^.+@.+\..+$/;
-        const mobilePattern = /^[789]\d{9}$/;
+        var amountPerKg = 0;
 
-        const addresses = new Array();
-
-
-        function Address(name, type, address, email, mobile, location) {
-            this.name = name;
-            this.type = type;
-            this.address = address;
-            this.email = email;
-            this.mobile = mobile;
-            this.location = location;
-        }
-
-        function addAddress() {
-            const name = _name.value;
-            const type1 = _type1.checked;
-            const type2 = _type2.checked;
-            const address = _address.value;
-            const email = _email.value;
-            const mobile = _mobile.value;
-            const location = _location.value;
-
-            // console.log(`name: ${name}`);
-            // console.log(`type1: ${type1}`);
-            // console.log(`type2: ${type2}`);
-            // console.log(`address: ${address}`);
-            // console.log(`email: ${email}`);
-            // console.log(`mobile: ${mobile}`);
-            // console.log(`location: ${location}`);
-
-            if (
-                namePattern.test(name) &&
-                (type1 || type2) &&
-                address &&
-                emailPattern.test(email) &&
-                mobilePattern.test(mobile) &&
-                location
-            ) {
-                var type = "";
-
-                if (type1) {
-                    type = "Temporary";
-                } else if (type2) {
-                    type = "Permanent";
-                }
-
-                const addressObj = new Address(name, type, address, email, mobile, location);
-                addresses.push(addressObj);
-
-                displayAddress();
-                reset();
+        if (normal) {
+            if (weight >= 5 && weight < 15) {
+                amountPerKg = 125;
+            } else if (weight >= 15 && weight <= 25) {
+                amountPerKg = 175;
+            } else if (weight > 25 && weight <= 36) {
+                amountPerKg = 200;
+            }
+        } if (express) {
+            if (weight >= 5 && weight < 15) {
+                amountPerKg = 175;
+            } else if (weight >= 15 && weight <= 25) {
+                amountPerKg = 225;
+            } else if (weight > 25 && weight <= 36) {
+                amountPerKg = 200;
+            }
+        } if (platinum) {
+            if (weight >= 5 && weight < 15) {
+                amountPerKg = 225;
+            } else if (weight >= 15 && weight <= 25) {
+                amountPerKg = 375;
+            } else if (weight > 25 && weight <= 36) {
+                amountPerKg = 400;
             }
         }
 
-        function displayAddress() {
-            const resultTable = '<table style="position: fixed; background-color: lightgrey; border: 1px solid black; border-collapse: collapse; margin-top: 25px;" border="1"><tr><th>Name</th><th>Type</th><th>Address</th><th>Email</th><th>Mobile</th><th>Location</th></tr></table >';
+        var tax = 0;
 
-            _result.innerHTML = resultTable;
-
-            for (var i = 0; i < addresses.length; ++i) {
-                const data = addresses[i];
-                const name = data.name;
-                const type = data.type;
-                const address = data.address;
-                const email = data.email;
-                const mobile = data.mobile;
-                const location = data.location;
-
-                const nameCol = "<td>" + name + "</td>";
-                const typeCol = "<td>" + type + "</td>";
-                const addressCol = "<td>" + address + "</td>";
-                const emailCol = "<td>" + email + "</td>";
-                const mobileCol = "<td>" + mobile + "</td>";
-                const locationCol = "<td>" + location + "</td>";
-
-                _result.firstChild.innerHTML += "<tr>" + nameCol + typeCol + addressCol + emailCol + mobileCol + locationCol + "</tr>";
-            }
+        if (destination === "London - 1800") {
+            tax = 10;
+        } else if (destination === "New York - 3100") {
+            tax = 15;
+        } else if (destination === "Tokyo - 2800") {
+            tax = 20;
+        } else {
+            tax = 0;
         }
 
-        function reset() {
-            _name.value = "";
-            _type1.checked = false;
-            _type2.checked = false;
-            _address.value = "";
-            _email.value = "";
-            _mobile.value = "";
-            _location.value = "";
-        } 
-    </script>
-    <!-- <script>
-        var i = 0;
-        const _result = document.getElementById("result");
+        var invoicePrice = (weight * amountPerKg);
+        var shipmentCost = Math.ceil(invoicePrice + (invoicePrice * tax / 100));
 
-        function AddressRegister(Name, Type, Address, Email, Mobile, Location) {
-            this.Name = Name;
-            this.Type = Type;
-            this.Address = Address;
-            this.Email = Email;
-            this.Mobile = Mobile;
-            this.Location = Location;
-        }
-
-        var flag = 0;
-        var tabledata, button;
-        var dataArray = new Array();
-
-        function Add() {
-            var Name = document.getElementById("name").value;
-            var Types = document.getElementsByName("type");
-
-            for (i = 0; i < Types.length; i++) {
-                if (Types[i].checked)
-                    var Type = Types[i].value;
-            }
-
-            var Address = document.getElementById("address").value;
-            var Email = document.getElementById("email").value;
-            var Mobile = document.getElementById("mobile").value;
-            var Location = document.getElementById("location").value;
-
-            var data = new AddressRegister(Name, Type, Address, Email, Mobile, Location);
-            dataArray.push(data);
-
-            displayAddress();
-        }
-        function displayAddress() {
-            if (flag == 0) {
-                tabledata = "<table style='position: fixed; background-color:lightgrey; border: 1px solid black; border-collapse: collapse;  margin-top: 25px;' border = '1'><tr><th>Name</th><th>Type</th><th>Address</th><th>Email</th><th>Mobile</th><th>Location</th></tr>";
-            }
-
-            for (i = 0; i < dataArray.length; i++) {
-                var name = dataArray[i].Name;
-                var type = dataArray[i].Type;
-                var address = dataArray[i].Address;
-                var email = dataArray[i].Email;
-                var mobile = dataArray[i].Mobile;
-                var location = dataArray[i].Location;
-
-                //Please fill the required code to store the values in tabledata.
-                const nameCol = "<td>" + name + "</td>";
-                const typeCol = "<td>" + type + "</td>";
-                const addressCol = "<td>" + address + "</td>";
-                const emailCol = "<td>" + email + "</td>";
-                const mobileCol = "<td>" + mobile + "</td>";
-                const locationCol = "<td>" + location + "</td>";
-
-                tabledata += "<tr>" + nameCol + typeCol + addressCol + emailCol + mobileCol + locationCol + "</tr>";
-            }
-
-            // console.log(tabledata);
-
-            if (flag == 0) {
-                //Please fill the required code to store the table data in result.
-                _result.innerHTML = tabledata + "</table>"
-
-
-                document.getElementById("name").value = "";
-
-                document.getElementsByName("type").checked = false;
-
-                document.getElementById("address").value = "";
-
-                document.getElementById("email").value = "";
-
-                document.getElementById("mobile").value = "";
-
-                document.getElementById("location").value = "";
-            }
-        }
-
-        function reset() {
-            document.getElementById("name").value = "";
-
-            document.getElementsByName("type").checked = false;
-
-            document.getElementById("address").value = "";
-
-            document.getElementById("email").value = "";
-
-            document.getElementById("mobile").value = "";
-
-            document.getElementById("location").value = "";
-        }
-    </script> -->
+        result.innerText = "Your shipment has been accepted. Amount to be paid is Rs." + shipmentCost;
+        return false;
+    }
+</script>
 </body>
-
 </html>
