@@ -14,8 +14,6 @@ The web page should look like
 
 ![demo_2](demo_2.png)
 
-
-
 <table>
 <thead>
 <tr>
@@ -95,7 +93,6 @@ needs to remain on the same page</td>
 <td>An input type of reset that has a value as Reset. On clicking this button, all
 fields should be reset</td>
 </tr>
-
 </tbody>
 </table>
 </td>
@@ -123,7 +120,6 @@ be center aligned</li>
 </ol>
 <strong>Node: (Do not use Inline CSS)</strong>
 </td>
-
 </tr>
 </tbody>
 </table>
