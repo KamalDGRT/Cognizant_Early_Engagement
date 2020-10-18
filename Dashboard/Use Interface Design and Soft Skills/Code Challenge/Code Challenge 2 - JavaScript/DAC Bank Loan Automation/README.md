@@ -1,5 +1,7 @@
 # DAC Bank Loan Automation
 
+Check out the live demo [here](https://dac-bank-loan-automation-ritam.glitch.me/).
+
 DAC Bank is in the process of issuing various loans to its customers. To ease the customer requirements, they need to automate the feature of various loans issued by the bank like Vehicle, Home, Education loan etc.
 
 Create a Web page “availLoan.html” that accepts the fields such as Customer name, address, gender, email id, mobile number, date of birth, loan type, loan amount and tenure. The form needs to display the output message with the loan amount on clicking the Avail Loan submit button, and the form needs to remain in the same page.

@@ -1,5 +1,7 @@
 # Simple CALCULATOR
 
+Checkout the live demo (here)[https://simple-calculator-ritam.glitch.me/].
+
 Create the following Web page with the heading 'Calculator' and provided images. 
 
 ![demo](demo.jpeg)

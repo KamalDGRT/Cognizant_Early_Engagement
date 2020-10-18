@@ -1,5 +1,7 @@
 # Book A Show - Online Ticket Booking
 
+Check out the live demo [here](https://book-a-show-ritam.glitch.me/)
+
 “BOOK A SHOW” is an online movie ticket system to book tickets for current and upcoming movie releases across the city in India. The user can select the movie and preferred circle and the ticket details while booking the ticket.
 
 Create a web page ticket.html to accommodate details that will be entered by the user such as name, movie name, circle (Silver, Gold or Platinum), phone number, showdate, number of adults and children. On submission of the form, an alert box should be displayed with a message "Booking Successful” and it needs to remain on the same page.
