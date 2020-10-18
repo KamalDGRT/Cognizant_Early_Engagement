@@ -128,6 +128,7 @@
 #### Code Challeng
 
 - [Code Challenge 1 - HTML5 and CSS3](https://github.com/RitamChakraborty/Cognizant_Early_Engagement/tree/master/Dashboard/Use%20Interface%20Design%20and%20Soft%20Skills/Code%20Challenge/Code%20Challenge%201%20-%20HTML5%20and%20CSS3/Book%20A%20Show%20-%20Online%20Ticket%20Booking)
+- [Code Challenge 2 - JavaScript](https://github.com/RitamChakraborty/Cognizant_Early_Engagement/tree/master/Dashboard/Use%20Interface%20Design%20and%20Soft%20Skills/Code%20Challenge/Code%20Challenge%202%20-%20JavaScript/DAC%20Bank%20Loan%20Automation)
 
 #### Hands On
 
