@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAC BANK - AVAIL LOAN</title>
+    <style>
+        body {
+            background-color: #FFAACC;
+        }
+
+        h1 {
+            color: #770080;
+            font-family: cursive;
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            place-items: center;
+        }
+
+        #result {
+            color: #770080;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>DAC BANK - AVAIL LOAN</h1>
+<form autocomplete="on" onsubmit="displayMessage(); return false;">
+    <table>
+        <tr>
+            <td>
+                <label for="customerName">Customer Name</label>
+            </td>
+            <td>
+                <input type="text" id="customerName" name="customerName" pattern="^[a-zA-Z ]+$" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="customerAddress">Address</label>
+            </td>
+            <td>
+                <textarea name="customerAddress" id="customerAddress" cols="20" rows="5" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="gender">Gender</label>
+            </td>
+            <td>
+                <input type="radio" name="gender" id="male" value="Male" required>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="Female" required>
+                <label for="female">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="customerEmail">Email ID</label>
+            </td>
+            <td>
+                <input type="email" name="customerEmail" id="customerEmail" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="customerMobileNumber">Mobile Number</label>
+            </td>
+            <td>
+                <input type="text" name="customerMobileNumber" id="customerMobileNumber" pattern="^[7-9]\d{9}$"
+                       required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="dob">Date of Birth</label>
+            </td>
+            <td>
+                <input type="date" name="dob" id="dob" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="loanType">Loan Type</label>
+            </td>
+            <td>
+                <input list="loan" name="loanType" id="loanType" required>
+                <datalist id="loan">
+                    <option value="Vehicle">Vehicle</option>
+                    <option value="Home">Home</option>
+                    <option value="Education">Education</option>
+                </datalist>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="loanAmount">Loan Amount</label>
+            </td>
+            <td>
+                <input type="text" name="loanAmount" id="loanAmount" placeholder="Enter the Amount" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="loanTenure">Tenure</label>
+            </td>
+            <td>
+                <input type="number" name="loanTenure" id="loanTenure" min="1" max="5" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="submit" id="submit" value="Avail Loan">
+            </td>
+            <td>
+                <input type="reset" name="reset" id="reset" value="Reset">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="result"></div>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function displayMessage() {
+            const name = document.getElementById("customerName").value;
+            const loanAmount = document.getElementById("loanAmount").value;
+            const result = document.getElementById("result");
+
+            result.innerText = "Thank you " + name + ". Your Loan Amount is " + loanAmount;
+        }
+    </script>
+</form>
+</body>
+</html>
