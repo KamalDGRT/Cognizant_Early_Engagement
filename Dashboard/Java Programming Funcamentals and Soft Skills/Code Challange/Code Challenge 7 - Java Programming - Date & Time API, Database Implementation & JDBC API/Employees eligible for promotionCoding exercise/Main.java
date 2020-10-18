@@ -49,7 +49,7 @@ public class Main {
         int n = scanner.nextInt();
         ArrayList<Employee> employees = new ArrayList<>();
 
-        IntStream.rangeClosed(1, 4).forEach(i -> {
+        IntStream.rangeClosed(1, n).forEach(i -> {
             String id = scanner.next();
             String joiningDateStr = scanner.next();
 
@@ -64,7 +64,8 @@ public class Main {
             }
         });
 
-        List<Employee> filteredEmployees = employees.stream().filter(Employee::getIsEligible).collect(Collectors.toList());
+        List<Employee> filteredEmployees = employees.stream().filter(Employee::getIsEligible)
+                .collect(Collectors.toList());
 
         if (filteredEmployees.isEmpty()) {
             System.out.println("No one is eligible");
