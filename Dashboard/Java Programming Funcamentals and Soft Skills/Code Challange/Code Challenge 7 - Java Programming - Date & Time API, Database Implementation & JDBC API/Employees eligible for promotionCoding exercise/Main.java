@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -18,8 +20,10 @@ class Employee implements Comparable<Employee> {
         this.joiningDate = joiningDate;
     }
 
-    public void setIsEligible(LocalDate now) {
-        isEligible = joiningDate.until(now, ChronoUnit.YEARS) >= 5;
+    public void validate(LocalDate now) {
+        Pattern pattern = Pattern.compile("^[a-zA-z]\\d{4}$");
+        Matcher matcher = pattern.matcher(id);
+        isEligible = matcher.matches() && joiningDate.until(now, ChronoUnit.YEARS) >= 5;
     }
 
     public boolean getIsEligible() {
@@ -56,7 +60,7 @@ public class Main {
             try {
                 LocalDate joiningDate = LocalDate.parse(joiningDateStr, dateTimeFormatter);
                 Employee employee = new Employee(id, joiningDate);
-                employee.setIsEligible(now);
+                employee.validate(now);
                 employees.add(employee);
             } catch (Exception ignore) {
                 System.out.println("Invalid date format");
