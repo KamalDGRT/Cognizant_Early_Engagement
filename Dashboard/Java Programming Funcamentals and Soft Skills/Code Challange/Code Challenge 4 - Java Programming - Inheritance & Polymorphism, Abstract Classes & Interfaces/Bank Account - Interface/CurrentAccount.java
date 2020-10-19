@@ -5,6 +5,6 @@ public class CurrentAccount extends Account implements MaintenanceCharge {
 
     @Override
     public float calculateMaintenanceCharge(float noOfYears) {
-        return (100.0f + noOfYears) + 200.0f;
+        return (100.0f * noOfYears) + 200.0f;
     }
 }
