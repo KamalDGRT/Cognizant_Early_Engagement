@@ -122,5 +122,4 @@ The averageAnnualRainfall of each city is stored in the database, the meteorolog
 | Extract the names of the cities with heavy rainfall | DBHandler | `Connection establishConnection()` | This method should connect to the database by reading the database details from the db.properties file and it should return the connection object | MYSQL database is used. Store and retrieve the details into/from AnnualRainfall table.<br>`db.properties` file is used for storing the database details. | 
 
 > **Note**<br>
-*When working with IDE, please change the values of db.classname, db.url, db.username, db.password according to your MYSQL Configuration.*<br><br>
-No Sample Input/Output is provided as part of this document. This means that you will not be evaluated for any of the presentation related Requirements. You are free to write your own code in the main , to invoke the business method to check its correctness. main is not taken for evaluation.   
+*When working with IDE, please change the values of db.classname, db.url, db.username, db.password according to your MYSQL Configuration.*

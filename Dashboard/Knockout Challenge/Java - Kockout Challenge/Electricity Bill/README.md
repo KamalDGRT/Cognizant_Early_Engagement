@@ -87,7 +87,9 @@ From the ElectricityBill.txt file, read the details , parse the data and constru
 | > 1000 | 7.5 |
 
 >**For example:**<br>
-If the units Consumed is 650, then the first 100 units are free and for the next 200 units the charges are Rs. 1.50/unit, for next 300 units the charges are Rs.  3.50/unit and for the remaining 50 units the charges are Rs. 5.5 /unit. The total bill amounts to Rs.  1625(first 100 free then 200*1.50 + 300*3.50 + 50*5.5)   
+If the units Consumed is 650, then the first 100 units are free and for the next 200 units the charges are 1.50/unit, for next 300 units the charges are 3.50/unit and for the remaining 50 units the charges are 5.5 /unit.<br><br>
+The total bill amounts to<br><br>
+`1625 = (0 (first 100 free then) + 200 * 1.50 + 300 * 3.50 + 50 * 5.5)`
 
           
 After calculating the bill amount store all the EBill object into a list.
@@ -133,5 +135,4 @@ Script file contains the DDL statement for creating the needed table in the data
 | Store the units consumed by each customer | DBHandler | Connection establishConnection() | This method should connect to the database by reading the database details from the db.properties file and it should return the connection object | MYSQL database is used. Store and retrieve the details into/from ElectricityBill table.<br>db.properties file is used to store the database configuration details. | 
 
 > **Note**<br>
-*When working with IDE, please change the values of db.classname, db.url, db.username, db.password according to your MYSQL Configuration.*<br><br>
-No Sample Input/Output is provided as part of this document. This means that you will not be evaluated for any of the presentation related Requirements. You are free to write your own code in the main , to invoke the business method to check its correctness. main is not taken for evaluation.  
+*When working with IDE, please change the values of db.classname, db.url, db.username, db.password according to your MYSQL Configuration.*

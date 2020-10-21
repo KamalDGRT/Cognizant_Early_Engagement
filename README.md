@@ -138,7 +138,7 @@
 - [Consignment Booking - New](https://github.com/RitamChakraborty/Cognizant_Early_Engagement/tree/master/Dashboard/Use%20Interface%20Design%20and%20Soft%20Skills/HTML5%2C%20CSS3/Consignment%20Booking%20-%20New)
 - [Address Book - New](https://github.com/RitamChakraborty/Cognizant_Early_Engagement/tree/master/Dashboard/Use%20Interface%20Design%20and%20Soft%20Skills/HTML5%2C%20CSS3/Address%20Book%20-%20New)
 
-## Knockout Challenge
+## Knockout Challenges
 
 - [Java - Mock ICT](https://github.com/RitamChakraborty/Cognizant_Early_Engagement/tree/master/Dashboard/Knockout%20Challenge/Java%20-%20Mock%20ICT/Rainfall%20Report%20Automation)
 - [Java - Knockout Challenge](https://github.com/RitamChakraborty/Cognizant_Early_Engagement/tree/master/Dashboard/Knockout%20Challenge/Java%20-%20Kockout%20Challenge/Electricity%20Bill)
