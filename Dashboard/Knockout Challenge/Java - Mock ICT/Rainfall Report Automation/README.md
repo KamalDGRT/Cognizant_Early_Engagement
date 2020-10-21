@@ -64,17 +64,22 @@ Sample File containing rainfall details. The file is comma delimited.
 
     cityPincode,cityName,JanRainfall,FebRainfall,MarRainfall,AprRainfall,MayRainfall,JunRainfall,JulRainfall,AugRainfall,SepRainfall,OctRainfall,NovRainfall,DecRainfall
 
-<p align="center">
-    <img src="weather_data_file.png" alt="Weather Data" hspace="10" vspace="10">
-</p>
+**Demo Data**
+
+    10002,New York,24,15,17,16,11,10,9,4,24,36,40,32
+    99501,Alaska,14,24,36,40,27,16,15,34,15,10,9,32
+    20019,Washington,11,20,12,20,10,15,20,21,19,10,11,12
+    30381,Atlanta,25,26,23,20,21,22,21,21,20,19,18,11
+    27565,Oxford,6,7,11,14,9,8,14,15,9,9,10,11
+    85054,Phoenix,12,11,12,11,10,14,15,14,15,12,10,9
+    90080,Los Angeles,6,5,4,5,4,5,6,8,4,5,9,4
 
 From the AllCityMonthlyRainfall.txt file, read the details, parse the data and construct an AnnualRainfall object for each record in the file, then calculate the averageAnnualRainfall of each city based on the conditions mentioned below:
 
 Average Annual Rainfall = (sum of all monthly rainfall of a city)/number of months
 
-**For example:**
-
-> If the city has a monthly rainfall as 
+>**For example:**<br>
+If the city has a monthly rainfall as 
 30, 15.5, 12, 10, 15, 20.9, 21, 22, 20, 18.6, 15, 10
 then the averageAnnualRainfall will be<br><br>(30+15.5+12+10+15+20.9+21+22+20+18.6+15+10) / 12, which is 210 / 12 = 17.5<br><br>Therefore, the averageAnnualRainfall of that city is 17.5. After calculating the averageAnnualRainfall, store all the AnnualRainfall object into a list.
 
