@@ -60,7 +60,7 @@ The average monthly rainfall in each city and the other details of the city are 
 
 Sample File containing rainfall details. The file is comma delimited.
 
-> AllCityMonthlyRainfallFormat:
+**AllCityMonthlyRainfallFormat:**
 
     cityPincode,cityName,JanRainfall,FebRainfall,MarRainfall,AprRainfall,MayRainfall,JunRainfall,JulRainfall,AugRainfall,SepRainfall,OctRainfall,NovRainfall,DecRainfall
 
@@ -72,60 +72,50 @@ From the AllCityMonthlyRainfall.txt file, read the details, parse the data and c
 
 Average Annual Rainfall = (sum of all monthly rainfall of a city)/number of months
 
-> For example: 
+**For example:**
 
-If the city has a monthly rainfall as 
+> If the city has a monthly rainfall as 
 30, 15.5, 12, 10, 15, 20.9, 21, 22, 20, 18.6, 15, 10
-then the averageAnnualRainfall will be
+then the averageAnnualRainfall will be<br><br>(30+15.5+12+10+15+20.9+21+22+20+18.6+15+10) / 12, which is 210 / 12 = 17.5<br><br>Therefore, the averageAnnualRainfall of that city is 17.5. After calculating the averageAnnualRainfall, store all the AnnualRainfall object into a list.
 
-(30+15.5+12+10+15+20.9+21+22+20+18.6+15+10) / 12, which is 210 / 12 = 17.5 
-
-Therefore, the averageAnnualRainfall of that city is 17.5
-After calculating the averageAnnualRainfall, store all the AnnualRainfall object into a list.
-
-> Validation:
+**Validation:**
 
 The city Pincode should contain exactly 5 digits. If the city Pincode is valid then parse the data and calculate the average annual rainfall else throw a user defined Exception “InvalidCityPincodeException” with a message "Invalid City Pincode".
 
-> Note
-
+> **Note**<br>
 *This functionality is about only reading the records from the file, parsing each record data, validating the cityPincode, creation of AnnualRainfall object and then storing the AnnualRainfall Object into the list and return the list. This functionality does not deal with DB Connectivity.*
 
-> AnnualRainfall(model class)
+**AnnualRainfall(model class)**
 
 | Component Name | Type (Class) | Attributes | Methods | Responsibilities | 
 | -------------- | ------------ | ---------- | ------- | ---------------- | 
 | Parse data and calculate the average annual rainfall of all cities | AnnualRainfall | int cityPincode<br>String cityName<br>double averageAnnualRainfall | Include getters and setter method for all the attributes |  | 
 | Parse data and calculate the average annual rainfall of all cities | AnnualRainfall |  | `void calculateAverageAnnualRainfall(double[] monthlyRainfall)` | This method should calculate and set the averageAnnualRainfall based on the monthly rainfall the city received | 
 
-> RainfallReport(utility class)
+**RainfallReport(utility class)**
 
 | Component Name | Type (Class) | Attributes | Methods | Responsibilities | 
 | -------------- | ------------ | ---------- | ------- | ---------------- | 
 | Parse data and calculate the average annual rainfall of all cities | RainfallReport | `List<AnnualRainfall> generateRainfallReport(String filePath)` | This method takes the file path as argument and it should parse the data stored in the file and it should validate the city Pin code by invoking the validate() method, if valid, construct an AnnualRainfall object for each record in the file, then calculate the average annual rainfall by invoking the `calculateAverageAnnualRainfall(double[] monthlyRainfall)` method of AnnualRainfall class. After calculating the averageAnnualRainfall, each AnnualRainfall should be added into the list and this method should return the list of AnnualRainfall. |  | 
 | Parse data and calculate the average annual rainfall of all cities | RainfallReport | `boolean validate(String cityPincode)` | This method should validate the city pincode, if valid return true else this method should throw an userdefined exception. | Throw a user defined exception “Invalid CityPincode Exception” if the pincode is invalid. | 
 
-> Note
-
+> **Note**<br>
 *Throw a user defined exception “Invalid CityPincode Exception” if the pincode is invalid.*
 
 #### Extract the names of the cities with heavy rainfall 
 
 The averageAnnualRainfall of each city is stored in the database, the meteorological department will find the maximumRainfall value and display the city details which received the maximumRainfall from the database.
 
-> Note
-
+> **Note**<br>
 *Script file containing the records are for implementing this requirement only. So copy and paste the records when working with IDE and then implement the requirement and test your code.*
 
-> RainfallReport(utility class)
+**RainfallReport(utility class)**
 
 | Component Name | Type (Class) | Attributes | Methods | Responsibilities | 
 | -------------- | ------------ | ---------- | ------- | ---------------- | 
 | Extract the names of the cities with heavy rainfal | RainfallReport | `List<AnnualRainfall> findMaximumRainfallCities ()` | This method should extract all the AnnualRainfall details from the AnnualRainfall table and return the list of cities with maximum averageAnnualRainfall.<br>Connect to the database by invoking the establishConnection() method of DBHandler class. | MYSQL database is used. Retrieve the details from  AnnualRainfall table. |
 | Extract the names of the cities with heavy rainfall | DBHandler | `Connection establishConnection()` | This method should connect to the database by reading the database details from the db.properties file and it should return the connection object | MYSQL database is used. Store and retrieve the details into/from AnnualRainfall table.<br>`db.properties` file is used for storing the database details. | 
 
-> Note
-
-*When working with IDE, please change the values of db.classname, db.url, db.username, db.password according to your MYSQL Configuration.*
-
->No Sample Input/Output is provided as part of this document. This means that you will not be evaluated for any of the presentation related Requirements. You are free to write your own code in the main , to invoke the business method to check its correctness. main is not taken for evaluation.   
+> **Note**<br>
+*When working with IDE, please change the values of db.classname, db.url, db.username, db.password according to your MYSQL Configuration.*<br><br>
+No Sample Input/Output is provided as part of this document. This means that you will not be evaluated for any of the presentation related Requirements. You are free to write your own code in the main , to invoke the business method to check its correctness. main is not taken for evaluation.   
