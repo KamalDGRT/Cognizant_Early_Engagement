@@ -141,3 +141,4 @@
 ## Knockout Challenge
 
 - [Java - Mock ICT](https://github.com/RitamChakraborty/Cognizant_Early_Engagement/tree/master/Dashboard/Knockout%20Challenge/Java%20-%20Mock%20ICT/Rainfall%20Report%20Automation)
+- [Java - Knockout Challenge](https://github.com/RitamChakraborty/Cognizant_Early_Engagement/tree/master/Dashboard/Knockout%20Challenge/Java%20-%20Kockout%20Challenge/Electricity%20Bill)
