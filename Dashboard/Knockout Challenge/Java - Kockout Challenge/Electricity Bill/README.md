@@ -96,7 +96,7 @@ After calculating the bill amount store all the EBill object into a list.
 
 **Validation:**
 
-The consumerNumber should start with zero and it should contain 10 digits. If the consumerNumber is valid then parse the data and calculate the bill amount else throw a user defined Exception “InvalidConsumerNumberException” with a message "Invalid Consumer Number". 
+The consumerNumber should start with zero and it should contain 10 digits. If the consumerNumber is valid then parse the data and calculate the bill amount else throw a user defined Exception “**InvalidConsumerNumberException**” with a message "Invalid Consumer Number". 
 
 >**Note:**<br>
 This functionality is about only reading the records from the file, parsing each record data, validating the consumerNumber, creation of ElectricityBill object and then storing the ElectricityBill Object into the list and return the list. This functionality does not deal with DB Connectivity.
@@ -113,7 +113,7 @@ This functionality is about only reading the records from the file, parsing each
 | Component Name | Type (Class) | Attributes | Methods | Exception | 
 | -------------- | ------------ | ---------- | ------- | ---------------- |
 | Parse data and generate a bill for all the customers | ElectricityBoard | `List<ElectricityBill> generateBill(String filePath)` | This method takes the file path as argument and it should parse the data stored in the fileand it should validate the consumer number by invoking the validate() method, if valid,construct a ElectricityBill object for each record in the file, then calculate the bill amount by invoking the calculateBillAmount method of ElectricityBill class.<br>After calculating the bill amount, each ElectricityBill should be added into the list and this method should return the list of ElectricityBill. |  |
-| Parse data and generate a bill for all the customers | ElectricityBoard | `booleanvalidate(String consumerNumber)` | This method should validate the consumerNumber, if valid return true else this method should throw an user defined exception. | Throw a user defined exception **InvalidConsumerNumberException** if the consumer number is invalid. | 
+| Parse data and generate a bill for all the customers | ElectricityBoard | `booleanvalidate(String consumerNumber)` | This method should validate the consumerNumber, if valid return true else this method should throw an user defined exception. | Throw a user defined exception "**InvalidConsumerNumberException**" if the consumer number is invalid. | 
 
 #### Store the ElectricityBill of each customer
 
