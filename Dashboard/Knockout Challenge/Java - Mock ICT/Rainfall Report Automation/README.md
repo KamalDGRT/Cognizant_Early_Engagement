@@ -56,11 +56,11 @@ Database connections should be configurable; it should not be hard coded. The da
 
 #### Parse data and generate the average annual rainfall for all cities
 
-The average monthly rainfall in each city and the other details of the city are stored in a flat file. Retrieve the data from the file and calculate the average annual rainfall of each city based on its monthly rainfall. The details of the cities with the rainfall details are stored in a file named AllCityMonthlyRainfall.txt.
+The average monthly rainfall in each city and the other details of the city are stored in a flat file. Retrieve the data from the file and calculate the average annual rainfall of each city based on its monthly rainfall. The details of the cities with the rainfall details are stored in a file named `AllCityMonthlyRainfall.txt`.
 
 Sample File containing rainfall details. The file is comma delimited.
 
-**AllCityMonthlyRainfallFormat:**
+**AllCityMonthlyRainfall Format:**
 
     cityPincode,cityName,JanRainfall,FebRainfall,MarRainfall,AprRainfall,MayRainfall,JunRainfall,JulRainfall,AugRainfall,SepRainfall,OctRainfall,NovRainfall,DecRainfall
 
@@ -94,7 +94,7 @@ The city Pincode should contain exactly 5 digits. If the city Pincode is valid t
 
 | Component Name | Type (Class) | Attributes | Methods | Responsibilities | 
 | -------------- | ------------ | ---------- | ------- | ---------------- | 
-| Parse data and calculate the average annual rainfall of all cities | AnnualRainfall | int cityPincode<br>String cityName<br>double averageAnnualRainfall | Include getters and setter method for all the attributes |  | 
+| Parse data and calculate the average annual rainfall of all cities | AnnualRainfall | int cityPincode<br><br>String cityName<br><br>double averageAnnualRainfall | Include getters and setter method for all the attributes |  | 
 | Parse data and calculate the average annual rainfall of all cities | AnnualRainfall |  | `void calculateAverageAnnualRainfall(double[] monthlyRainfall)` | This method should calculate and set the averageAnnualRainfall based on the monthly rainfall the city received | 
 
 **RainfallReport(utility class)**
