@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Your Tickets</title>
+    <style>
+        body {
+            background-color: #FFAACC;
+            display: grid;
+            place-items: center;
+        }
+
+        h1 {
+            color: #770080;
+            font-family: Courier New;
+            text-align: center;
+            font-style: italic;
+        }
+
+        #result {
+            font-weight: bold;
+            color: #770080;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Book Your Tickets</h1>
+    <form onsubmit="calculateCharges(); return false;" autocomplete="on">
+        <table>
+            <tr>
+                <td>
+                    <label for="customerName">Customer Name</label>
+                </td>
+                <td>
+                    <input type="text" id="customerName" name="customerName" placeholder="Enter your name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="address">Address</label>
+                </td>
+                <td>
+                    <textarea name="address" id="address" cols="20" rows="5" required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="customerEmail">Email ID</label>
+                </td>
+                <td>
+                    <input type="email" id="customerEmail" name="customerEmail" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="customerMobileNumber">Mobile Number</label>
+                </td>
+                <td>
+                    <input type="tel" name="customerMobileNumber" id="customerMobileNumber" pattern="^[6-9]\d{9}$"
+                        required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="location">Park Location</label>
+                </td>
+                <td>
+                    <input type="radio" name="location" id="locationMumbai" value="Mumbai" required>
+                    <label for="locationMumbai">Mumbai</label>
+                    <input type="radio" name="location" id="locationDelhi" value="Delhi" required>
+                    <label for="locationDelhi">Delhi</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dateOfVisit">Date of Visit</label>
+                </td>
+                <td>
+                    <input type="date" id="dateOfVisit" name="dateOfVisit" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="bookingType">Booking Type</label>
+                </td>
+                <td>
+                    <input list="bookType" id="bookingType" name="bookingType" required>
+                    <datalist id="bookType">
+                        <option value="Normal">Normal</option>
+                        <option value="School">School</option>
+                        <option value="Corporate">Corporate</option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="adults">Adults</label>
+                </td>
+                <td>
+                    <input type="number" name="adults" id="adults" min="0" max="500" value="0" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="children">Children</label>
+                </td>
+                <td>
+                    <input type="number" name="children" id="children" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="submit" name="submit" value="Book Now">
+                </td>
+                <td>
+                    <input type="reset" id="reset" name="reset" value="Clear">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="result"></div>
+    <script>
+        function calculateCharges() {
+            const name = document.getElementById("customerName").value;
+            const adults = document.getElementById("adults").value;
+            const children = document.getElementById("children").value;
+            const bookType = document.getElementById("bookingType").value;
+            const result = document.getElementById("result");
+            const adultTicket = 1500;
+            const childTicket = 1200;
+            var discountPercentage = 0;
+
+            if (bookType === "School") {
+                discountPercentage = 50;
+            } else if (bookType === "Corporate") {
+                discountPercentage = 25;
+            }
+
+            const ticketCost = adultTicket * adults + childTicket * children;
+            const discount = ticketCost * discountPercentage / 100;
+            const totalCost = Math.round(ticketCost - discount);
+
+            result.innerText = "Thank you " + name + ". Total cost to be paid is " + totalCost;
+        }
+    </script>
+
+   
+</body>
+
+</html>
