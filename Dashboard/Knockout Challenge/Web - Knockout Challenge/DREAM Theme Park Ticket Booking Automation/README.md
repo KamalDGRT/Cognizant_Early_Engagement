@@ -1,5 +1,7 @@
 # DREAM Theme Park Ticket Booking Automation
 
+Check out the live demo [here](https://book-your-ticket-ritam.glitch.me/).
+
 ## Introduction
 
 Dream Theme park is a famous amusement park that attracts lot of people everyday. The queue outside the ticket counter is usually long and people wait long  to get their tickets.So in order to help their visitors save on their time and energy, the theme park wants to automate its booking process so that the visitors can book the tickets online from the official website. All that the visitors need to do is log on to the website and provide their details. 
