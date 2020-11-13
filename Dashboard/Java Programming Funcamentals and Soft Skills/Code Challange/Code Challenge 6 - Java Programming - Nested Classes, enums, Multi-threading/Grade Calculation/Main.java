@@ -1,14 +1,13 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter the number of Threads:");
         int n = scanner.nextInt();
 
         GradeCalculator[] gradeCalculators = new GradeCalculator[n];
-        Thread[] threads = new Thread[n];
 
         for (int i = 0; i < n; ++i) {
             System.out.println("Enter the String:");
@@ -23,9 +22,8 @@ public class Main {
             }
 
             gradeCalculators[i] = new GradeCalculator(studName, marks);
-            threads[i] = new Thread(gradeCalculators[i]);
-            threads[i].start();
-            threads[i].interrupt();
+            gradeCalculators[i].start();
+            gradeCalculators[i].join();
         }
 
         for (int i = 0; i < n; ++i) {
